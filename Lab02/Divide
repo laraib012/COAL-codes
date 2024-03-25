@@ -1,0 +1,20 @@
+include irvine32.inc
+
+.data
+    ;variables will be initialized here
+
+.code
+main PROC
+
+MOV eax,0         ;move 0 in EAX register
+MOV eax,-10/3     ;Quotient will be stored in EAX register
+MOV ebx,0         ;move 0 in EBX register
+MOV ebx,(10 MOD 3)*-1   ;Remainder stored in EBX register
+
+;MOD is used only for unsigned numbers. For signed numbers multiply answer by -1
+
+call dumpregs    ;display values of registers
+
+exit
+main endp
+end main
