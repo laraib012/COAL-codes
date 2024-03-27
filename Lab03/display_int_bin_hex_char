@@ -1,0 +1,23 @@
+include irvine32.inc
+
+.data
+mbyte BYTE 05,12,100   ;declares variable mbyte of BYTE(8 bit) data type
+
+.code
+main proc
+MOV eax,0             ;initialize EAX to 0
+mov ah,mbyte          ; move 1st byte in AH regs
+mov al,mbyte+1        ;move 2nd byte in AL regs
+
+call writeint         ;calling write int function to display output in integer  
+call crlf
+call writehex         ;calling write hex function to display output in hexadecimal 
+call crlf
+call writebin          ;calling write bin function to display output in binary 
+call crlf
+call writechar         ;calling write char function to display output in character 
+call crlf
+
+exit
+main endp
+end main
