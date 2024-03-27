@@ -1,0 +1,15 @@
+include irvine32.inc
+.data
+response TEXTEQU <'Hi, Thanks'>     ;initializing variable with a string using TEXTEQU
+reply BYTE response               ;initializing another variable (reply) with uper string
+.code
+main proc
+
+MOV edx, offset reply   ;moving contents of reply in EDX... to display
+call writestring           ;calling write string function to display contents of EDX
+
+;writestring only works with EDX
+
+exit
+main endp
+end main
