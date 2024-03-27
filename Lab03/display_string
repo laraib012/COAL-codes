@@ -1,0 +1,23 @@
+include irvine32.inc
+.data
+greetings BYTE "Hi There",0     ;initializing greetings variable with a string
+
+.code
+main proc
+
+MOV eax,lengthof greetings     ;finding length of string using built-in function and then moving it into eax register
+call writeint                  ;calling write int to display contents of EAX in decimal
+call crlf
+
+MOV eax,sizeof greetings       ;finding size of string using built-in function and then moving it into eax register
+call writeint                   ;calling write int to display contents of EAX in decimal
+call crlf
+
+MOV edx, OFFSET greetings      ;moving content of greeting variable in EDX which is a string
+call writestring               ;calling writestring function to display contents of EDX .
+ 
+; write string only woorks with EDX
+
+exit 
+main endp
+end main
